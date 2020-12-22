@@ -1,0 +1,18 @@
+{
+  "name": "06-packages-and-dependancies",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "presomething": "node --print \"'pre'\"",
+    "something": "node --print \"'something'\"",
+    "postsomething": "node --print \"'post'\""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "fastify": "^2.0.0",
+    "rfdc": "1.1.3"
+  }
+}

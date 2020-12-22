@@ -1,0 +1,12 @@
+{
+  "name": "06-packages-and-dependancies",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "arg": "^5.0.0"
+  }
+}
