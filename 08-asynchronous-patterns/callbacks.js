@@ -21,6 +21,7 @@ const filePaths = Array.from({ length: 3 }).map((_, index) =>
             fs.readFile(filePath3, (error, fileData3) => {
                 if (error) { throw new Error(error); }
 
+                // All files accessible via closure.
                 console.log(filePath1, fileData1.toString());
                 console.log(filePath2, fileData2.toString());
                 console.log(filePath3, fileData3.toString());
