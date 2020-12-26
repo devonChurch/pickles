@@ -32,4 +32,4 @@ myEventEmitter.emit("laugh");
 
 // Error
 myEventEmitter.addListener("error", console.error);
-myEventEmitter.emit("error", new Error("ERROR!"))
+myEventEmitter.emit("error", new Error("There has been an error"));
