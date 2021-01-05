@@ -1,7 +1,11 @@
+const { dir } = require("console");
 const fs = require("fs");
 const path = require("path");
+const stream = require("stream");
 const util = require("util");
 const readdirAsync = util.promisify(fs.readdir);
+const opendirAsync = util.promisify(fs.opendir);
+const pipelineAsync = util.promisify(stream.pipeline)
 
 // Sync.
 {
@@ -81,3 +85,55 @@ const readdirAsync = util.promisify(fs.readdir);
 
   getFiles().then((files) => console.log("recursion", files));
 }
+
+
+// Stream.
+// {
+//   fs.opendir(
+//     __dirname,
+//     { bufferSize: 3, encoding: "utf8" },
+//     async (error, directories) => {
+//       if (error) {
+//         console.error(error);
+//       } else {
+//         console.log(directories);
+//         for await (directory of directories) {
+//             console.log(directory);
+//         }
+//       }
+//     }
+//   );
+
+// const createTransformStream = () => {
+//     new stream.Transform({
+//         transform(buffer, encoding, next) {
+//             const content = buffer.toString("utf8")
+//             console.log({buffer, content});
+//             next(null, "content")
+//         }
+        
+//     })
+// }
+
+// opendirAsync(__dirname, { bufferSize: 3, encoding: "buffer"})
+// opendirAsync(__dirname)
+//     .then(directories => {
+//         console.log(directories);
+//         const readStream = stream.Readable.from(directories);
+//         const transformStream = createTransformStream();
+
+//         console.log({
+//             "stream.Readable": stream.Readable,
+//             readStream
+//         });
+
+//         readStream.on("data", (data) => console.log("data", data))
+
+//         readStream.pipe(process.stdout)
+
+//         // pipelineAsync(readStream, transformStream)
+//         //     // pipelineAsync(readStream)
+//         //     .catch(console.error)
+//         //         .finally(() => console.log("complete!"))
+//     })
+// }
