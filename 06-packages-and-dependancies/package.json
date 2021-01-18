@@ -1,6 +1,6 @@
 {
   "name": "06-packages-and-dependancies",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -13,6 +13,7 @@
   "dependencies": {
     "chalk": "^4.1.0",
     "fastify": "^2.0.0",
-    "rfdc": "1.1.3"
+    "rfdc": "1.1.3",
+    "semver": "^1.0.6"
   }
 }

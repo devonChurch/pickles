@@ -6,9 +6,8 @@
  * @example
  * node --require ./run-first.js run-second.js
  */
-// global.runFirst();
-// console.log("run second");
+global.runFirst();
+console.log("run second");
 
-const chalk = require("chalk");
-
-console.log(chalk.blue('Hello world!'));
+// const chalk = require("chalk");
+// console.log(chalk.blue('Hello world!'));

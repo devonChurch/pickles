@@ -10,7 +10,7 @@ const childProcess = require("child_process");
   spawn.stdout.on("data", (data) =>
     console.log("data: ", data.toString("utf8"))
   );
-  spawn.stderr.on("error", console.error);
+  spawn.stderr.on("data", console.error);
   spawn.on("close", (code) =>
     console.log(`closing ${code ? "unsuccessfully" : "successfully"} (${code})`)
   );
