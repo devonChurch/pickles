@@ -210,3 +210,62 @@
       console.log(Sam.sayHello());
       console.log(Sam.myJob());
 }
+
+{
+    const createPerson = (options) => ({
+        name: options.name,
+        sayHello() {
+            return `Hello, my name is ${this.name}`
+        }
+    });
+
+    const createAdult = ({ name, job }) => {
+        const Adult = Object.create(createPerson({ name }));
+        Object.defineProperties(Adult, {
+            job: { value: job },
+            myJob: {
+                value() {
+                    return `My job is ${this.job}`
+                }
+            }
+        });
+        return Adult;
+    };
+
+    const Sam = createAdult({
+        name: "Sam",
+        job: "Teacher"
+    });
+
+    console.log(Sam.sayHello());
+    console.log(Sam.myJob());
+}
+
+{
+    class Person {
+        constructor(options) {
+            this.name = options.name;
+        }
+        sayHello() {
+            return `Hello, my name is ${this.name}`
+        }
+    }
+
+    class Adult extends Person {
+        constructor({ name, job }) {
+            super({ name });
+            this.job = job;
+        }
+        myJob() {
+            return `My job is ${this.job}`
+        }
+    }
+
+    const Sam = new Adult({
+        name: "Sam",
+        job: "Teacher"
+    })
+
+    console.log(Sam.sayHello());
+    console.log(Sam.myJob());
+}
