@@ -1,0 +1,17 @@
+{
+  "name": "13-file-system",
+  "version": "1.0.0",
+  "description": "",
+  "main": "directories.js",
+  "dependencies": {
+    "chokidar": "^3.5.0"
+  },
+  "devDependencies": {
+    "jest": "^26.6.3"
+  },
+  "scripts": {
+    "test": "jest --verbose"
+  },
+  "author": "",
+  "license": "ISC"
+}
