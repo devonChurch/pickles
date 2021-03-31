@@ -1,0 +1,14 @@
+{
+  "name": "05-javascript-concepts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "assert-trial.js",
+  "scripts": {
+    "test": "jest --verbose"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^26.6.3"
+  }
+}
