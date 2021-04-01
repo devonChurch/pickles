@@ -32,3 +32,10 @@ emitter.emitTask("RUNNING");
 emitter.emitTask("COOKING");
 emitter.emitTask("RUNNING");
 emitter.emitTask("COOKING");
+
+console.log("eventNames", emitter.eventNames());
+console.log("getMaxListeners", emitter.getMaxListeners());
+console.log("listenerCount", emitter.listenerCount("task"));
+console.log("listeners", emitter.listeners("task"));
+
+emitter.listeners("task").forEach((func) => func("RUNNING"))
