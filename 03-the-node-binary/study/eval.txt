@@ -1,0 +1,3 @@
+hello from --eval
+
+// node --eval "fs.writeFileSync(path.resolve(process.env.PWD, 'study/eval.txt'), 'hello from --eval', { encoding: 'utf8' })"
